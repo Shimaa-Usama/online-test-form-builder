@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'online-test-form-header',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrl: './online-test-form-header.component.scss'
 })
 export class OnlineTestFormHeaderComponent {
+  @Input() courseName!: string;
 
 }

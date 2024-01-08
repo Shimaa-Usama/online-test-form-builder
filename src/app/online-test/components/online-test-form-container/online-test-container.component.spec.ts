@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OnlineTestFormContainerComponent } from './online-test-form-container.component';
+import { OnlineTestFormContainerComponent } from './online-test-container.component';
 
 describe('OnlineTestFormContainerComponent', () => {
   let component: OnlineTestFormContainerComponent;

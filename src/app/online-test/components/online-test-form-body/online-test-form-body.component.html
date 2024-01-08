@@ -1,1 +1,6 @@
-<p>online-test-form-body works!</p>
+<div class="row">
+    @switch (questionType) {
+        @case (QuestionTypeEnum.PARAGRAPH_WITH_QUESTIONS) { <paragraph-with-questions/> }
+        @case (QuestionTypeEnum.MULTIPLE_CHOICE_QUESTION) { <multiple-choice-question/> }
+      }
+</div>

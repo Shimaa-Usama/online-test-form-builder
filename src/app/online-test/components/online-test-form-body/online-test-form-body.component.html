@@ -1,6 +1,16 @@
 <div class="row">
-    @switch (questionType) {
-        @case (QuestionTypeEnum.PARAGRAPH_WITH_QUESTIONS) { <paragraph-with-questions/> }
-        @case (QuestionTypeEnum.MULTIPLE_CHOICE_QUESTION) { <multiple-choice-question/> }
-      }
+  
+  <form [formGroup]="onlineTestFormGroup" (ngSubmit)="submitForm()">
+
+    @for (question of questionList; track question.id) {
+      <div class="question-container">
+        @switch (question.questionType) {
+          @case (QuestionTypeEnum.PARAGRAPH_WITH_QUESTIONS) { <paragraph-with-questions /> }
+          @case (QuestionTypeEnum.MULTIPLE_CHOICE_QUESTION) { <multiple-choice-question [question]="question"/> }
+        }
+      </div>
+    }
+
+  </form>
+
 </div>

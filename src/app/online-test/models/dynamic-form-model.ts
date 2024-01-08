@@ -5,8 +5,6 @@ export interface DynamicFormModel {
     formControlName: string,
     label: string,
     fieldType: 'custom' | 'radiobutton' | 'inputText',
-    maxLength?: number,
-    minLength?: number,
     placeholder?: string,
     validators?: Validators,
 }

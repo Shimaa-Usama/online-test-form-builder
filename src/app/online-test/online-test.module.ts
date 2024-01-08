@@ -7,6 +7,7 @@ import { OnlineTestFormHeaderComponent } from './components/online-test-form-hea
 import { OnlineTestPageComponent } from './online-test-page/online-test-page/online-test-page.component';
 import { ParagraphWithQuestionsComponent } from './components/paragraph-with-questions/paragraph-with-questions.component';
 import { MultipleChoiceQuestionComponent } from './components/multiple-choice-question/multiple-choice-question.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -21,7 +22,9 @@ import { MultipleChoiceQuestionComponent } from './components/multiple-choice-qu
   ],
   imports: [
     CommonModule,
-    OnlineTestRoutingModule
+    OnlineTestRoutingModule,
+    // FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class OnlineTestModule { }

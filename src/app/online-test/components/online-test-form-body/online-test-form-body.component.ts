@@ -11,7 +11,6 @@ import { ParagraphWithQuestions } from '../../models/paragraph-question';
   styleUrl: './online-test-form-body.component.scss'
 })
 export class OnlineTestFormBodyComponent {
-  @Input() questionType!: QuestionTypeEnum;
   @Input() questionList!: (MultipleChoiseQuestion | ParagraphWithQuestions)[];
 
 

@@ -1,3 +1,8 @@
-import { Routes } from '@angular/router';
+import { Route } from '@angular/router';
 
-export const routes: Routes = [];
+export const appRoutes: Route[] = [
+    {
+        path: '',
+        loadChildren: () => import('./online-test/online-test.module').then((m) => m.OnlineTestModule),
+    }
+];

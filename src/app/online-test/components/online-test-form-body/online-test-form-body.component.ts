@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { QuestionTypeEnum } from '../../enums/question-type';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { onlineTestForm } from './online-test-form';
@@ -10,9 +10,10 @@ import { ParagraphWithQuestions } from '../../models/paragraph-question';
   templateUrl: './online-test-form-body.component.html',
   styleUrl: './online-test-form-body.component.scss'
 })
-export class OnlineTestFormBodyComponent {
-  @Input() questionList!: (MultipleChoiseQuestion | ParagraphWithQuestions)[];
 
+export class OnlineTestFormBodyComponent{
+  @Input() questionList!: any[];
+  @Output() onlineTestAnswers = new EventEmitter();
 
   public QuestionTypeEnum = QuestionTypeEnum;
   public onlineTestFormGroup: FormGroup;
@@ -23,6 +24,7 @@ export class OnlineTestFormBodyComponent {
     this.initFormGroup();
   }
 
+
   private initFormGroup(): void {
     onlineTestForm.forEach(control => {
       this.onlineTestFormGroup.addControl(control?.formControlName, this.formBuilder.control('', control.validators));
@@ -30,5 +32,7 @@ export class OnlineTestFormBodyComponent {
   }
 
   public submitForm() {
+      this.onlineTestAnswers.emit(this.onlineTestFormGroup.value);
+      this.onlineTestFormGroup.reset();
   }
 }

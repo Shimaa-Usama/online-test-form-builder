@@ -1,0 +1,9 @@
+<div class="row mt-4">
+    <p class="fs-3">Your Answers</p>
+    @for (answer of answers| keyvalue;let index = $index;track index) {
+    <div class="mb-2">
+        <span>{{formatKey(answer.key)}} - </span>
+        <span>{{answer.value}}</span>
+    </div>
+    }
+</div>

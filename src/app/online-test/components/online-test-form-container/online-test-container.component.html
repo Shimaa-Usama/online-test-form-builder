@@ -1,8 +1,17 @@
-<div class="container">
+<div class="container py-5">
     <div class="row">
-        <div class="border rounded-3">
+        <div class="border rounded-3 p-5">
             <online-test-form-header [courseName]="courseName"></online-test-form-header>
-            <online-test-form-body [questionList]="questionList"></online-test-form-body>
+            <online-test-form-body [questionList]="questionList"
+                (onlineTestAnswers)="submitAnswers($event)"></online-test-form-body>
         </div>
     </div>
+
+
+    @if (answers) {
+    <div class="row">
+        <online-test-answers [answers]="answers" />
+    </div>
+    }
+
 </div>

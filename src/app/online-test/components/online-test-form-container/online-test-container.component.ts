@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { QuestionTypeEnum } from '../../enums/question-type';
 import { MultipleChoiseQuestion } from '../../models/multiple-choice-question.model';
 import { ParagraphWithQuestions } from '../../models/paragraph-question';
@@ -10,6 +10,15 @@ import { ParagraphWithQuestions } from '../../models/paragraph-question';
 })
 export class OnlineTestContainerComponent {
   @Input() courseName!: string;
-  @Input() questionList!: (MultipleChoiseQuestion | ParagraphWithQuestions)[];
+  @Input() questionList!: any[];
 
+
+  @Output() onlineTestAnswers = new EventEmitter();
+
+  public answers!: any;
+
+  public submitAnswers(answers: any) {
+    this.onlineTestAnswers.emit(answers);
+    this.answers = answers;
+  }
 }

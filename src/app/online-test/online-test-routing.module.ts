@@ -5,15 +5,13 @@ import { OnlineTestPageComponent } from './online-test-page/online-test-page/onl
 const routes: Routes = [
   {
     path: '',
+    redirectTo: 'online-test',
+    pathMatch: 'full'
+  },
+  {
+    path: 'online-test',
     component: OnlineTestPageComponent,
-    children: [
-      {
-        path: '',
-        redirectTo: 'online-test',
-        pathMatch: 'full'
-      },
-    ],
-  }
+  },
 ];
 
 @NgModule({

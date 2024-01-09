@@ -28,8 +28,12 @@ export class OnlineTestPageComponent {
     {
       id: 3,
       paragraph: 'A man is climbing up a mountain which is inclined. He has to travel 100 km to reach the top of the mountain. Every day He climbs up 2 km forward in the day time. Exhausted, he then takes rest there at night time. At night, while he is asleep, he slips down 1 km backwards because the mountain is inclined.',
-      questions: [{ question: 'how many days does it take him to reach the mountain top? ', answer: 99 }],
+      questions: [{ id: 1, question: 'how many days does it take him to reach the mountain top? ', answer: 99 }],
       questionType: QuestionTypeEnum.PARAGRAPH_WITH_QUESTIONS
     }
-  ]
+  ];
+
+  public submitAnswers(answers: any){
+    //call api service to send answers object to set values of it in DB
+  }
 }

@@ -5,9 +5,8 @@ import { OnlineTestFormBodyComponent } from './components/online-test-form-body/
 import { OnlineTestContainerComponent } from './components/online-test-form-container/online-test-container.component';
 import { OnlineTestFormHeaderComponent } from './components/online-test-form-header/online-test-form-header.component';
 import { OnlineTestPageComponent } from './online-test-page/online-test-page/online-test-page.component';
-import { ParagraphWithQuestionsComponent } from './components/paragraph-with-questions/paragraph-with-questions.component';
-import { MultipleChoiceQuestionComponent } from './components/multiple-choice-question/multiple-choice-question.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { OnlineTestAnswersComponent } from './components/online-test-answers/online-test-answers.component';
 
 
 
@@ -17,13 +16,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     OnlineTestContainerComponent,
     OnlineTestFormHeaderComponent,
     OnlineTestFormBodyComponent,
-    ParagraphWithQuestionsComponent,
-    MultipleChoiceQuestionComponent
+    OnlineTestAnswersComponent
   ],
   imports: [
     CommonModule,
     OnlineTestRoutingModule,
-    // FormsModule,
+    FormsModule,
     ReactiveFormsModule
   ]
 })

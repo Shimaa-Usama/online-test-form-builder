@@ -8,6 +8,7 @@ export interface ParagraphWithQuestions {
 }
 
 interface Question {
+  id: number;
   question: string;
   answer: string | number;
 }
